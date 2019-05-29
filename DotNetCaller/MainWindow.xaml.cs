@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Tick42;
 using Tick42.AppManager;
+using Tick42.StickyWindows;
 
 namespace DotNetCaller
 {
@@ -30,16 +20,22 @@ namespace DotNetCaller
 
             this.glue = new Glue42();
             this.glue.Initialize("DotNetWindowLoadCaller", useContexts: true);
+
+            // Initialize Window Stickiness and read from config:
+            var swOptions = this.glue.StickyWindows?.GetStartupOptions() ?? new SwOptions();
+            this.glue.StickyWindows?.RegisterWindow(this, swOptions);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.ReuseAppWithUrl("http://localhost:22080/getting-started/");
+            //this.ReuseAppWithURL("http://localhost:22080/getting-started/");
+            this.StartAppWithURL("http://localhost:22080/getting-started/");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.ReuseAppWithUrl("http://localhost:22080/client-list-portfolio-contact/dist/#/clientlist");
+            //this.ReuseAppWithURL("http://localhost:22080/client-list-portfolio-contact/dist/#/clientlist");
+            this.StartAppWithURL("http://localhost:22080/client-list-portfolio-contact/dist/#/clientlist");
         }
 
         private IAppManagerApplication GetWebManagerHost()
@@ -50,14 +46,14 @@ namespace DotNetCaller
             });
         }
 
-        private void ReuseAppWithUrl(string url)
+        private void ReuseAppWithURL(string url)
         {
             var appDef = this.GetWebManagerHost();
             var service = this.glue.Interop.CreateServiceProxy<IContextSetter>();
             var app = appDef.Instances.FirstOrDefault();
             if (app == null)
             {
-                this.StartAppWithUrl(url);
+                this.StartAppWithURL(url);
             }
             else
             {
@@ -65,7 +61,7 @@ namespace DotNetCaller
             }
         }
 
-        private void StartAppWithUrl(string url)
+        private void StartAppWithURL(string url)
         {
             var webAppHostApp = this.GetWebManagerHost();
 

@@ -1,0 +1,13 @@
+{
+  "title": "WPF-to-Host Web App loader",
+  "type": "exe",
+  "name": "shared-context-demo-wpf",
+  "hidden": false,
+  "details": {
+    "path": "%GDDIR%/../Demos/WPFToHostWebAppLoader/",
+    "command": "DotNetCaller.exe",
+    "parameters": "",
+    "width": 1000,
+    "height": 400
+  }
+}

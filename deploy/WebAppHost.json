@@ -12,7 +12,7 @@
             "allowCollapse": false,
             "startLocation": "center"
         },
-        "allowMultiple": false,
+        "allowMultiple": true,
         "ignoreSaveOnClose": false
     }
 ]
