@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Web App Host",
+        "type": "window",
+        "name": "WebAppHost",
+        "details": {
+            "url": "http://localhost:22080/WebAppHost/",
+            "top": 100,
+            "left": 200,
+            "width": 600,
+            "height": 800,
+            "allowCollapse": false,
+            "startLocation": "center"
+        },
+        "allowMultiple": true,
+        "ignoreSaveOnClose": false
+    }
+]
