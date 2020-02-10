@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using Tick42;
 using Tick42.AppManager;
-using Tick42.StickyWindows;
+using Tick42.Windows;
 
 namespace DotNetCaller
 {
@@ -22,8 +22,8 @@ namespace DotNetCaller
             this.glue.Initialize("DotNetWindowLoadCaller", useContexts: true);
 
             // Initialize Window Stickiness and read from config:
-            var swOptions = this.glue.StickyWindows?.GetStartupOptions() ?? new SwOptions();
-            this.glue.StickyWindows?.RegisterWindow(this, swOptions);
+            var swOptions = this.glue.GlueWindows?.GetStartupOptions() ?? new GlueWindowOptions();
+            this.glue.GlueWindows?.RegisterWindow(this, swOptions);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

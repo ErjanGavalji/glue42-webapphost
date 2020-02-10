@@ -5,13 +5,6 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCaller", "DotNetCaller.csproj", "{0D35E64A-579B-45C2-B6A2-CB86EB705C59}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{920B399A-67E8-4CA9-A904-F9E859FA3E46}"
-	ProjectSection(SolutionItems) = preProject
-		lib\Glue42.dll = lib\Glue42.dll
-		lib\Glue42.pdb = lib\Glue42.pdb
-		lib\Glue42.xml = lib\Glue42.xml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
